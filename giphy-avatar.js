@@ -7,11 +7,11 @@ jQuery(document).ready(function ($) {
 
 	$(document).on('click', '#giphy-button', function() {
 		var list_markup;
-		$.get( 'https://api.giphy.com/v1/gifs/search?api_key=hryzkrY8pFUC5LOeNT6V25X0Eim6T2q3&q=' + word + '&limit=5', function( rsponse ) {			
-			for(var i in response.data) {
+		$.get( 'https://api.giphy.com/v1/gifs/search?api_key=hryzkrY8pFUC5LOeNT6V25X0Eim6T2q3&q=' + word + '&limit=5', function( data ) {			
+			for(var i in data.data) {
 
 				list_markup += '<div class="list-item">';
-				list_markup += '<img src="' + response.data[i].images.original.url + '" />';
+				list_markup += '<img src="' + data.data[i].images.original.url + '" />';
 				list_markup += '<button class="set-avatar">Set as avatar</button>';
 				list_markup += '</div>';
 

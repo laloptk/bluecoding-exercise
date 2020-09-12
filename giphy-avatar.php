@@ -19,13 +19,13 @@ if(!defined('ABSPATH')) return;
 add_action('wp_enqueue_scripts', function() {
 	wp_enqueue_style('giphy-css', plugins_url('giphy-avatar.css', __FILE__));
 	wp_enqueue_script('giphy-js', plugins_url('giphy-avatar.js', __FILE__), array('jquery'), '1.0.0', true);
-	wp_enqueue_script( 'my_js', get_theme_file_uri( 'js/eventos.js'), array('jquery') );
+	//wp_enqueue_script( 'my_js', get_theme_file_uri( 'js/eventos.js'), array('jquery') );
 
-    wp_localize_script( 'giphy-js', 'ajax_var', array(
+    /*wp_localize_script( 'giphy-js', 'ajax_var', array(
         'url'    => admin_url( 'admin-ajax.php' ),
         'nonce'  => wp_create_nonce( 'my-ajax-nonce' ),
         'action' => 'event-list'
-    ) );
+    ) );*/
 });
 
 add_action('wp_body_open', function() {
@@ -56,12 +56,12 @@ function giphy_avatar_callback() {
 
 }
 
-function my_event_list_cb() {
+/*function my_event_list_cb() {
     
 
     wp_die();
-}
-add_action( 'wp_ajax_nopriv_event-list', 'my_event_list_cb' );
-add_action( 'wp_ajax_event-list', 'my_event_list_cb' );
+}*/
+//add_action( 'wp_ajax_nopriv_event-list', 'my_event_list_cb' );
+//add_action( 'wp_ajax_event-list', 'my_event_list_cb' );
 
 
