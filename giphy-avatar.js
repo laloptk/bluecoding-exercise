@@ -8,11 +8,7 @@ jQuery(document).ready(function ($) {
 	$(document).on('click', '#giphy-button', function() {
 		var list_markup;
 		$.get( 'https://api.giphy.com/v1/gifs/search?api_key=hryzkrY8pFUC5LOeNT6V25X0Eim6T2q3&q=' + word + '&limit=5', function( rsponse ) {			
-			var count;
 			for(var i in response.data) {
-
-				count++;
-				console.log(count);
 
 				list_markup += '<div class="list-item">';
 				list_markup += '<img src="' + response.data[i].images.original.url + '" />';
@@ -26,7 +22,7 @@ jQuery(document).ready(function ($) {
 		});
 	});
 
-	$('.set-avatar').on('click', function(e)  {
+	/*$('.set-avatar').on('click', function(e)  {
 		e.preventDefault();
 		$.ajax({
             type: "post",
@@ -36,5 +32,5 @@ jQuery(document).ready(function ($) {
                 $('#my-events-list').html(result);
             }
         });
-	});
+	});*/
 });
